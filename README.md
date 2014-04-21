@@ -9,34 +9,34 @@ This is a project skeleton to start quickly your project. It's composed of a nod
 ## Installation
 
 Get the sources:
-``bash
+```bash
 git clone https://github.com/kdelemme/bootstrap-angular-node-mongo.git
-``
+```
 
 ### Server
 
 In order to start the nodejs server, we need express and mongoose dependencies.
 
 In the api directory, install the nodejs dependencies:
-``bash
+```bash
 npm install
-``
+```
 
 ## Usage
 
 ### Server
 
 Starts the nodejs application:
-``bash
+```bash
 node api/app.js
-``
+```
 
 You should see:
-``bash
+```bash
 kevin@home:/var/www/angular/template$ node api/app.js 
 [INFO] Your project API started on port 3000
 [DB] Successfully connected to: mongodb://localhost/template
-``
+```
 
 ### Client
 
