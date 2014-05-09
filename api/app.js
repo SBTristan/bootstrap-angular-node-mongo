@@ -1,13 +1,13 @@
 var express = require('express');
 var app = express();
-var server = app.listen(3000);
-
+var bodyParser = require('body-parser'); //bodyparser + json + urlencoder
+var morgan  = require('morgan'); // logger
 var db = require('./config/database');
 
 //Configuration
-app.use(express.json());
-app.use(express.urlencoded());
-app.use(express.logger());
+app.listen(3001);
+app.use(bodyParser());
+app.use(morgan());
 
 app.all('*', function(req, res, next) {
 	res.set('Access-Control-Allow-Origin', 'http://localhost');
@@ -28,4 +28,5 @@ routes.example = require('./route/example.js');
 app.post('/path', routes.example.myPath);
 
 
-console.log('[INFO] Your project API started on port ' +  server.address().port);
+console.log('[INFO] Your project API started on port 3001');
+console.log(app);

@@ -13,13 +13,30 @@ Get the sources:
 git clone https://github.com/kdelemme/bootstrap-angular-node-mongo.git
 ```
 
-### Server
+### NodeJS
 
 In order to start the nodejs server, we need express and mongoose dependencies.
 
 In the api directory, install the nodejs dependencies:
 ```bash
-npm install
+kevin@home:api$ npm install
+```
+
+### AngularJS
+
+Use Gulp to build your JavaScript sources:
+```bash
+kevin@home$ gulp
+```
+
+You should see:
+```bash
+kevin@home$ gulp
+[gulp] Using gulpfile gulpfile.js
+[gulp] Starting 'scripts'...
+[gulp] Finished 'scripts' after 18 ms
+[gulp] Starting 'default'...
+[gulp] Finished 'default' after 10 μs
 ```
 
 ## Usage
