@@ -29,4 +29,3 @@ app.post('/path', routes.example.myPath);
 
 
 console.log('[INFO] Your project API started on port 3001');
-console.log(app);
