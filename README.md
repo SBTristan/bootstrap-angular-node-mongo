@@ -3,7 +3,7 @@
 
 ## Description
 
-This is a project skeleton to start quickly your project. It's composed of a nodejs backend server used to host a RESTful api using express and mongoose, and a frontend AngularJS application.
+This is a project skeleton to quickly start your project. It's composed of a nodejs backend server used to host a RESTful api using express and mongoose, and a frontend AngularJS application with ui-router. Gulp is used as the build management system.
 
 
 ## Installation
@@ -31,12 +31,14 @@ kevin@home$ gulp
 
 You should see:
 ```bash
-kevin@home$ gulp
-[gulp] Using gulpfile gulpfile.js
+kevin@home:$ gulp
+[gulp] Using gulpfile /var/www/angular/template/gulpfile.js
 [gulp] Starting 'scripts'...
-[gulp] Finished 'scripts' after 18 ms
+[gulp] Starting 'styles'...
+[gulp] Finished 'styles' after 37 ms
+[gulp] Finished 'scripts' after 55 ms
 [gulp] Starting 'default'...
-[gulp] Finished 'default' after 10 μs
+[gulp] Finished 'default' after 13 μs
 ```
 
 ## Usage
@@ -61,10 +63,12 @@ Open your browser on `http://localhost/template/app`
 
 ## Stack
 
-* AngularJS
-* Bootstrap
-* MongoDB
+* AngularJS v1.2.17
+* ui-router v0.2.10
+* Bootstrap v3.0.2
+* MongoDB 
 * Node.js
+* mongoose
 
 ## Licence
 The MIT License (MIT)
