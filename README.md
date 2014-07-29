@@ -24,6 +24,11 @@ kevin@home:api$ npm install
 
 ### AngularJS
 
+Install Gulp dependencies:
+```bash
+kevin@home:$ npm install
+```
+
 Use Gulp to build your JavaScript sources:
 ```bash
 kevin@home$ gulp
