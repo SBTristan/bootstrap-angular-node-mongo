@@ -1,3 +1,5 @@
 appServices.factory('MyService', function() {
-	return {};
+	return {
+		hello: 'world'
+	};
 });
