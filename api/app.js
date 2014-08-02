@@ -4,8 +4,10 @@ var bodyParser = require('body-parser'); //bodyparser + json + urlencoder
 var morgan  = require('morgan'); // logger
 var db = require('./config/database');
 
+var PORT = 3001;
+
 //Configuration
-app.listen(3001);
+app.listen(PORT);
 app.use(bodyParser());
 app.use(morgan());
 
@@ -25,7 +27,10 @@ routes.example = require('./route/example.js');
 
 
 //Routing URLs
-app.post('/path', routes.example.myPath);
+app.get('/read/:id', routes.example.read);
+app.post('/create', routes.example.create);
+app.put('/edit', routes.example.edit);
+app.delete('/delete/:id', routes.example.delete);
 
 
-console.log('[INFO] Your project API started on port 3001');
+console.log('[INFO] Your project API started on port ' + PORT);

@@ -6,7 +6,7 @@ var appServices = angular.module('appServices', []);
 var appDirectives = angular.module('appDirectives', []);
 var appFilters = angular.module('appFilters', []);
 
-app.constant('Options', {baseUrl: 'http://localhost:3000'});
+app.constant('Options', {baseUrl: 'http://localhost:3001'});
 
 app.config(function($stateProvider, $urlRouterProvider) {
 	$urlRouterProvider.otherwise('/home');
