@@ -28,7 +28,5 @@ appControllers.controller('DashboardCtrl', ['$scope', '$http', '$state', '$state
 				$scope.data = data;
 			});
 		}
-
-
 	}
 ]);
