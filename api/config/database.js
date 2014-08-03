@@ -12,7 +12,11 @@ mongoose.connect(mongoUrl, mongoOptions, function (err, res) {
 });
 
 // Define Schemas
-var MySchema = new Schema({});
+var MySchema = new Schema({
+	uid: { type: Schema.Types.ObjectId, required: true },
+	field: { type: String, required: true },
+	created: { type: Date, default: Date.now }
+});
 
 // Export Models
 exports.MySchemaModel = mongoose.model('MySchema', MySchema);
