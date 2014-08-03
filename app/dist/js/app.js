@@ -37,11 +37,14 @@ appControllers.controller('HomeCtrl', ['$scope', '$http',
 ]);
 
 
-appControllers.controller('AppCtrl', ['$scope', '$http', '$stateParams',
-	function AppCtrl($scope, $http, $stateParams) {
+appControllers.controller('AppCtrl', ['$scope', '$http', '$state', '$stateParams',
+	function AppCtrl($scope, $http, $state, $stateParams) {
 
 		$scope.uid = $stateParams.uid;
 
+		$scope.returnHome = function() {
+			return $state.go('home', {param1: 'arg1'});
+		}
 	}
 ]);
 
@@ -57,12 +60,15 @@ appControllers.controller('DashboardCtrl', ['$scope', '$http', '$state', '$state
 			});
 		}
 
-		$scope.returnHome = function() {
-			return $state.go('home', {param1: 'arg1'});
-		}
+
 	}
 ]);
-
+appDirectives.directive('tplMyData', function() {
+	return {
+		restrict: 'E',
+		templateUrl: 'partials/directives/tpl.my.data.html'
+	};
+});
 
 appServices.factory('MyService', function($http, $q, Options) {
 	return {
