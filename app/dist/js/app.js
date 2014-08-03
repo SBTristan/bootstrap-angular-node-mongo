@@ -59,8 +59,6 @@ appControllers.controller('DashboardCtrl', ['$scope', '$http', '$state', '$state
 				$scope.data = data;
 			});
 		}
-
-
 	}
 ]);
 appDirectives.directive('tplMyData', function() {
@@ -69,7 +67,11 @@ appDirectives.directive('tplMyData', function() {
 		templateUrl: 'partials/directives/tpl.my.data.html'
 	};
 });
-
+appFilters.filter('myFilter', function() {
+	return function(input) {
+		return input ? input : 'Nothing Fetch Yet!';
+	}
+})
 appServices.factory('MyService', function($http, $q, Options) {
 	return {
 		read: function(id) {
