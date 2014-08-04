@@ -30,3 +30,26 @@ appControllers.controller('DashboardCtrl', ['$scope', '$http', '$state', '$state
 		}
 	}
 ]);
+
+appControllers.controller('CustomersCtrl', ['$scope', 
+	function CustomersCtrl($scope) {
+
+		$scope.customers = [
+			{
+				id: 1,
+				name: 'John Doe',
+				email: 'johndoe@gmail.com'
+			},
+			{
+				id: 2,
+				name: 'Kevin Doe',
+				email: 'kevindoe@gmail.com'
+			}
+		];
+
+		$scope.addCustomer = function(customer) {
+			$scope.customers.push(customer);
+		}
+
+	}
+]);

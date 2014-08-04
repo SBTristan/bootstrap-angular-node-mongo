@@ -28,4 +28,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
 		controller: 'DashboardCtrl',
 		templateUrl: 'partials/app.dashboard.html'
 	})
+	.state('app.customers', {
+		url: '/customers',
+		controller: 'CustomersCtrl',
+		templateUrl: 'partials/app.customers.html'
+	})
 });

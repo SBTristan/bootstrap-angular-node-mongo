@@ -28,6 +28,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
 		controller: 'DashboardCtrl',
 		templateUrl: 'partials/app.dashboard.html'
 	})
+	.state('app.customers', {
+		url: '/customers',
+		controller: 'CustomersCtrl',
+		templateUrl: 'partials/app.customers.html'
+	})
 });
 appControllers.controller('HomeCtrl', ['$scope', '$http',
 	function HomeCtrl($scope, $http) {
@@ -59,6 +64,29 @@ appControllers.controller('DashboardCtrl', ['$scope', '$http', '$state', '$state
 				$scope.data = data;
 			});
 		}
+	}
+]);
+
+appControllers.controller('CustomersCtrl', ['$scope', 
+	function CustomersCtrl($scope) {
+
+		$scope.customers = [
+			{
+				id: 1,
+				name: 'John Doe',
+				email: 'johndoe@gmail.com'
+			},
+			{
+				id: 2,
+				name: 'Kevin Doe',
+				email: 'kevindoe@gmail.com'
+			}
+		];
+
+		$scope.addCustomer = function(customer) {
+			$scope.customers.push(customer);
+		}
+
 	}
 ]);
 appDirectives.directive('tplMyData', function() {
