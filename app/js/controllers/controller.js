@@ -34,6 +34,13 @@ appControllers.controller('DashboardCtrl', ['$scope', '$http', '$state', '$state
 appControllers.controller('CustomersCtrl', ['$scope', 
 	function CustomersCtrl($scope) {
 
+		var defaultForm = {
+			name: "",
+			email: ""
+		};
+
+		var id = 2;
+
 		$scope.customers = [
 			{
 				id: 1,
@@ -48,7 +55,11 @@ appControllers.controller('CustomersCtrl', ['$scope',
 		];
 
 		$scope.addCustomer = function(customer) {
-			$scope.customers.push(customer);
+			var cust = {id: ++id, name:customer.name, email:customer.email};
+			$scope.customers.push(cust);
+
+			$scope.addForm.$setPristine();
+            $scope.customer = defaultForm;
 		}
 
 	}
