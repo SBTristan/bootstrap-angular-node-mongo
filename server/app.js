@@ -2,12 +2,11 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser'); //bodyparser + json + urlencoder
 var morgan  = require('morgan'); // logger
-var db = require('./config/database');
-
-var PORT = 3001;
+var db = require('./configs/database');
 
 //Configuration
-app.listen(PORT);
+app.set('port', 3001);
+app.listen(app.get('port'));
 app.use(bodyParser());
 app.use(morgan());
 
@@ -23,7 +22,7 @@ app.all('*', function(req, res, next) {
 
 //Routes
 var routes = {};
-routes.example = require('./route/example.js');
+routes.example = require('./routes/example.js');
 
 
 //Routing URLs
@@ -33,4 +32,4 @@ app.put('/edit', routes.example.edit);
 app.delete('/delete/:id', routes.example.delete);
 
 
-console.log('[INFO] Your project API started on port ' + PORT);
+console.log('[INFO] Your project API started on port ' + app.get('port'));

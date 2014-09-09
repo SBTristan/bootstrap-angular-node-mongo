@@ -1,9 +1,10 @@
-var db = require('../config/database.js');
+var MySchemaModel = require('../models/mySchemaModel').MySchemaModel;
+
 
 exports.read = function(req, res) {
 	var id = req.params.id;
 
-	// var query = db.MySchemaModel.findOne({uid: id});
+	// var query = MySchemaModel.findOne({uid: id});
 	// query.exec(function(err, data) {
 	// 	if (err) {
 	// 		return res.send(404, err);
@@ -18,7 +19,7 @@ exports.read = function(req, res) {
 exports.create = function(req, res) {
 	var data = req.body.data;
 
-	// var newEntry = new db.MySchemaModel();
+	// var newEntry = new MySchemaModel();
 	// newEntry.field = data.field;
 
 	// newEntry.save(function(err) {
@@ -35,7 +36,7 @@ exports.create = function(req, res) {
 exports.edit = function(req, res) {
 	var data = req.body.data;
 
-	// db.MySchemaModel.update({uid: data.uid},
+	// MySchemaModel.update({uid: data.uid},
 	// 	{field: data.field},
 	// 	function(err, nbRows, raw) {
 	// 		if (err) {
@@ -52,7 +53,7 @@ exports.edit = function(req, res) {
 exports.delete = function(req, res) {
 	var id = req.params.id;
 
-	// var query = db.MySchemaModel.findOne({uid: id});
+	// var query = MySchemaModel.findOne({uid: id});
 	// query.exec(function(err, data) {
 	// 	if (err) {
 	// 		return res.send(404, err);

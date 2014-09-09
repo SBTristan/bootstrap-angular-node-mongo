@@ -17,9 +17,9 @@ git clone https://github.com/kdelemme/bootstrap-angular-node-mongo.git
 
 In order to start the nodejs server, we need express and mongoose dependencies.
 
-In the api directory, install the nodejs dependencies:
+In the `server/` directory, install the nodejs dependencies:
 ```bash
-kevin@home:api$ npm install
+kevin@home:server$ npm install
 ```
 
 ### AngularJS
@@ -48,16 +48,22 @@ kevin@home:$ gulp
 
 ## Usage
 
-### Server
+### Server (HTTP)
+
+Configure your HTTP server to allow request on the new folder created after the git clone. You can use whatever HTTP server you like: apache, nginx, ...
+
+### Server (RESTful API)
+
+The nodejs server is only used as a RESTful API. It is not meant to be used as a HTTP server delivering the Angularjs application.
 
 Starts the nodejs application:
 ```bash
-node api/app.js
+node server/app.js
 ```
 
 You should see:
 ```bash
-kevin@home:/var/www/angular/template$ node api/app.js 
+kevin@home:/var/www/angular/template$ node server/app.js 
 [INFO] Your project API started on port 3000
 [DB] Successfully connected to: mongodb://localhost/template
 ```
