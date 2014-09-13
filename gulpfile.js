@@ -4,6 +4,7 @@ var less = require('gulp-less');
 
 var paths = {
     scripts: ['assets/js/app.js', 
+    		'assets/js/routes/**/*.js',
 		    'assets/js/controllers/**/*.js', 
 		    'assets/js/directives/**/*.js', 
 		    'assets/js/filters/**/*.js', 
@@ -14,13 +15,13 @@ var paths = {
 gulp.task('scripts', function() {
     return gulp.src(paths.scripts)
         .pipe(concat('app.js'))
-        .pipe(gulp.dest('assets/dist/js'));
+        .pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('styles', function() {
 	return gulp.src(paths.styles)
 		.pipe(less())
-		.pipe(gulp.dest('assets/dist/css'));
+		.pipe(gulp.dest('dist/css'));
 })
 
 // The default task (called when you run `gulp` from cli)
